@@ -1,0 +1,11 @@
+# pip install scanapi
+endpoints:
+  - name: tarefa # The API's name of API
+    path: http://127.0.0.1:8000/ #The API's base url
+    requests:
+      - name: tarefa # the name of the first requests
+        path: / # the path of the first request
+        method: get # The HTTP method of the first requests
+        tests:
+          - name: status_code_is_200 # The name of the first test for this requests
+            assert: ${{ response.status_code == 200 }}
